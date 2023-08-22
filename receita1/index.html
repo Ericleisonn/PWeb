@@ -4,19 +4,38 @@
 <title>SELEÇÃO TROVA - Uma trova...</title>
    <body>
     <style>
+        * {
+  box-sizing: border-box;
+}
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+.column {
+  float: left;
+  width: -50%;
+  padding: 0px;
+}
         #personalizar_tabela {
           font-family: Arial;
         }
         #personalizar_tabela td, #personalizar_tabela th {
-          border: 1px solid #00f735f6;
+          border: 2px solid #00f735f6;
           padding: 10px;
         }
         #personalizar_tabela th {
-          padding-top: 12px;
-          padding-bottom: 12px;
+          padding-top: 10px;
+          padding-bottom: 5px;
           background-color: #21f54f;
           color: white;
         }
+
+        table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 25%;
+  border: 1px solid #ddd;
+}
         </style>
       <img src="https://akamai.sscdn.co/uploadfile/letras/playlists/3/a/b/9/3ab92363f7974d679f4194de9f389b5b.jpg" width="200"/>
 
@@ -41,25 +60,42 @@
          Autor: Francisco Borges
 
       </p>
+      <div class="row">
+      <div class="column">
       <table id = "personalizar_tabela">
         <tr>
           <th>Cerveja</th>
-          <th>Preço</th>
         </tr>
         <tr>
-            
           <td>Bohemia</td>
-          <td>R$5.50</td>
         </tr>
         <tr>
             <td>Brahma</td>
-            <td>R$4.45</td>
         </tr>
         <tr>
             <td>Antartica</td>
-            <td>R$3.30</td>
         </tr>
       </table>
+      </div>
+    
+
+
+      <div class="column">
+      <table id = "personalizar_tabela">
+        <tr>
+            <th>Preço</th>
+          </tr>
+          <tr>
+            <td>R$5.50</td>
+          </tr>
+          <tr>
+              <td>R$4.50</td>
+          </tr>
+          <tr>
+              <td>R$3.70</td>
+      </table>
+      </div>
+      </div>
    </body>     
 
 </html>
