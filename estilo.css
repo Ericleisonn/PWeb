@@ -9,3 +9,21 @@ p.verso{
 p.mote{
     color:red;
 }
+
+
+    a:link{
+        text-decoration: none;
+        color:pink;
+    }
+    a:visited{
+        text-decoration: underline overline;
+        color:red;
+    }
+    a:hover{
+        text-decoration: underline;
+        color: black;
+    }
+    a:active{
+        text-decoration: none;
+        color: black;
+    }
