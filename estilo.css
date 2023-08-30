@@ -13,11 +13,11 @@ p.mote{
 
     a:link{
         text-decoration: none;
-        color:pink;
+        color:blue;
     }
     a:visited{
         text-decoration: underline overline;
-        color:red;
+        color:darkblue;
     }
     a:hover{
         text-decoration: underline;
@@ -25,9 +25,19 @@ p.mote{
     }
     a:active{
         text-decoration: none;
-        color: black;
+        color: green;
     }
 
     img.poeta{
         border-radius: 50%;
     }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        background-color: purple;
+      }
+      th, td {
+        padding: 5px;
+        text-align: left;
+      }
