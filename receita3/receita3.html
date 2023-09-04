@@ -1,42 +1,25 @@
 <!DOCTYPE html>
-
 <html>   
+    <head>
+        <meta charset="UTF-8">     
+        <link href="estilo.css" rel="stylesheet"> 
+        <title>Receita 3</title>
+    </head>
 
-   <head>
+    <body>
+        <div id="meu amor" class="hidediv"> Carregando cervejas...</div> 
+        <div><button id="botaoCarregar"> Carregar </button></div>            
+    </body>   
 
-      <meta charset="UTF-8">      
+    <script>
+        function carregarDiv(){
+            let div = document.getElementById("meu amor")   
+            div.classList.toggle('hidediv')
+            div.innerHTML = `<h1>Guinness</h1>`
+        }  
 
-   </head>
-
-   
-
-   <body>
-
-      <div id="meu amor"><button id="botaoCarregar">Carregando cervejas...</button></div>            
-
-   </body>   
-
-   
-
-   <script>
-
-      function carregarDiv(){
-
-         let div = document.getElementById("meu amor")
-         
-         div.innerHTML = `<h1>Guinness</h1>`
-
-      }
-
-      let botao = document.getElementById("botaoCarregar")            
-
-   </script>
-
-
-   <script>
-
-     botao.addEventListener("click", carregarDiv)    
-
-   </script>
+        let botao = document.getElementById("botaoCarregar")
+        botao.addEventListener("click", carregarDiv)
+    </script>
 
 </html>
