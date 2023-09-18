@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="estilo.css">
+        <title>Receita 5 - JS - Arrow e Callback Functions</title>
+    </head>
 
+    <body>
+        <div id="meu amor"></div>
+        <br>
+        <div>
+            <div>
+                <button id="botaoCarregar">Carregando cervejas...</button>
+                <button id="botaoOrdenar">Ordenar cervejas</button>
+                <button id="embaralhar">Embaralhar cervejas</button>
+            </div>
+            <br>
+            <div>
+                <a href="javascript:carregarDiv(cervejas)">Carregar cervejas</a>
+                <a href="javascript:ordenarCerv(cervejas)">Ordenar cervejas</a>
+                <a href="javascript:embaralhar(cervejas)">Embaralhar cervejas</a>
+            </div>
+        </div>
+        
+    </body>
+
+    <script>
+        let cervejas = ["Guiness", "Desperados", "Becks"]
+
+        const carregarDiv = cervs => {
+            const div = document.getElementById("meu amor")
+
+            const cervejasHtml = cervs.map(item => `<tr><td>${item}</td></tr>`) 
+
+            div.innerHTML = `<table><tr><th>Cervejas</th></tr>
+
+                                ${cervejasHtml.join("\n")}
+                            </table>`
+        }
+
+        const ordenarCerv = cervs => {
+            const ord = document.getElementById("meu amor")
+
+            const ordHtml = cervs.map(item => `<tr><td>${item}</td></tr>`).sort()
+
+            ord.innerHTML = `<table><tr><th>Cervejas</th></tr>         
+                                ${ordHtml.join("\n")}
+                            </table>`
+        }
+
+        const embaralhar = cervs => {
+            const emb = document.getElementById("meu amor")
+
+            const embHtml = cervs.map(item => `<tr><td>${item}</td></tr>`).sort(() => Math.random() -0.5)
+            
+            emb.innerHTML = `<table><tr><th>Cervejas</th></tr>
+                                ${embHtml.join("\n")}
+                            </table>`
+        }
+
+        let botao = document.getElementById("botaoCarregar")
+        botao.addEventListener("click",() => carregarDiv(cervejas))
+
+        let botaoOrd = document.getElementById("botaoOrdenar")
+        botaoOrd.addEventListener("click", () => ordenarCerv(cervejas))
+
+        let botaoEmb = document.getElementById("embaralhar")
+        botaoEmb.addEventListener("click", () => embaralhar(cervejas))
+
+    </script>
+
+</html>
