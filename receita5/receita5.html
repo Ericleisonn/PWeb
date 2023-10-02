@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="estilo.css">
+        <title>Receita 6 - Objetos JSON</title>
+    </head>
+
+    <body>
+        <div>
+            <button id="botaoCarregar">Carregando cervejas...</button>
+            <button id="botao_2">Carregando cervejas 2...</button>
+        </div>
+        <br>
+        <div id="cervejasDiv"></div>
+        <div id="cervejas_2"></div>
+    </body>
+
+    <script>
+        let cervejas = [
+            {name: "Guiness", alcohol: "10%", style: "Red Ale", ibu:60 }, 
+            {name: "Desperados", alcohol: "6%", style: "Cream Ale", ibu: 15}, 
+            {name: "Becks", alcohol: "5%", style: "Pilsen", ibu: 25}]
+
+        let pro = ["name","alcohol","style","ibu"]
+        
+        let titulo = ["Nome", "Álcool", "Estilo", "Amargor"]
+
+        //cs é um array de cervejas
+        const carregarDiv = (cs,prop,titulo,propriedade) => {
+            //const div = document.getElementById("cervejasDiv")
+            if (prop == undefined) {
+                prop = "cervejasDiv"
+            }
+
+            if(titulo.length < 4) titulo = ["Nome", "Álcool", "Estilo", "Amargor"]
+            if(propriedade.length < 4) propriedade = ["name","alcohol","style","ibu"]
+
+            const div = document.getElementById(prop)
+
+            const itensProp = propriedade.map(p => p)
+
+            /*const constructHtml = cs.map(item => 
+                `<tr>
+                    <td>${item['name']}</td>
+                    <td>${item['alcohol']}</td>
+                    <td>${item['style']}</td>
+                    <td>${item['ibu']}</td>
+                </tr>`
+            )*/
+
+            const constructHtml = cs.map(item => 
+                `<tr>
+                    ${propriedade.map(p => 
+                        `<td>${item[p]}</td>`
+                    ).join("")}
+                </tr>`
+            )          
+
+            const itensCabe = titulo.map(cabe => `<th>${cabe}</th>`)
+            div.innerHTML = 
+            `<table>
+                <tr>
+                    ${itensCabe.join("\n")}
+                </tr>
+                ${constructHtml.join("\n")}
+            </table>`
+        }
+
+        let botao = document.getElementById("botaoCarregar")
+        botao.addEventListener("click", () => carregarDiv(cervejas,"cervejasDiv",titulo,pro))
+
+        let anu10 = document.getElementById("botao_2")
+        anu10.addEventListener("click", () => carregarDiv(cervejas,"cervejas_2",titulo,pro))
+    </script>
+</html>
