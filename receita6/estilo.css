@@ -1,0 +1,22 @@
+table, th, td{
+    border:solid black;
+}
+
+th{
+    background-color: rgb(216, 29, 70);
+    color: white;
+}
+
+table{
+    margin: 0 auto;
+}
+
+.botaoCarregar{
+    text-align: center;
+}
+
+.botao{
+    border-radius: 25px;
+    background-color: rgb(216, 29, 70);
+    color: white;
+}
